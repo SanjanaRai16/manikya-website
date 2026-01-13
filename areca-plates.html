@@ -5,51 +5,345 @@
 <title>Manikya Areca Plates</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
 <style>
-.hero{background:#2e7d32;color:#fff;padding:70px;text-align:center}
-footer{background:#2e7d32;color:#fff;text-align:center;padding:15px}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  padding-top: 60px;
+}
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+  url("images/areca-hero.jpg") center/cover no-repeat;
+  color: #fff;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+/* Carousel */
+.carousel img {
+  height: 320px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background: rgba(0,0,0,0.55);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* Product Cards */
+.product-card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-card {
+  transition: transform .3s, box-shadow .3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+}
+
+/* WhatsApp Floating */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #fff;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 999;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  background: #1ebe5d;
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .carousel img { height: 220px; }
+  .hero { padding: 70px 15px; }
+}
+
+footer {
+  background: #1b5e20;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  padding: 12px;
+}
+/* FLOATING ACTIONS CONTAINER */
+.floating-actions {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+/* COMMON FAB STYLE */
+.fab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 15px;
+}
+
+.fab i {
+  font-size: 22px;
+}
+
+/* WHATSAPP */
+.fab.whatsapp {
+  background: #25D366;
+}
+
+.fab.whatsapp:hover {
+  background: #1ebe5d;
+}
+
+/* CALL */
+.fab.call {
+  background: #2e7d32;
+}
+
+.fab.call:hover {
+  background: #1b5e20;
+}
+
+/* HOVER EFFECT */
+.fab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 576px) {
+  .fab span {
+    display: none; /* icon-only on mobile */
+  }
+
+  .fab {
+    width: 56px;
+    height: 56px;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+  }
+}
+
+
 </style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-dark bg-success">
-<div class="container">
-<a class="navbar-brand" href="index.html">← Manikya Group</a>
-</div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-success fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">← Manikya Group</a>
+  </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-<h1>Areca Leaf Plates</h1>
-<p>Eco-Friendly • Food Safe • Compostable</p>
+  <h1 class="fw-bold">Areca Leaf Plates</h1>
+  <p class="lead">Eco-Friendly • Food Safe • Compostable</p>
 </section>
 
+<!-- CAROUSEL -->
 <section class="container py-5">
-<h3 class="text-success text-center mb-4">Pricing</h3>
+  <div id="arecaCarousel"
+       class="carousel carousel-fade slide shadow rounded"
+       data-bs-ride="carousel"
+       data-bs-interval="3500"
+       data-bs-pause="hover"
+       data-bs-touch="true">
 
-<table class="table table-bordered text-center">
-<thead class="table-success">
-<tr><th>Product</th><th>Size</th><th>Qty</th><th>Price</th><th>Order</th></tr>
-</thead>
-<tbody>
-<tr>
-<td>Round Plate</td><td>10 inch</td><td>100</td><td>₹650</td>
-<td><a href="https://wa.me/91XXXXXXXXXX?text=Order%20100%2010%20inch%20Round%20Areca%20Plates" class="btn btn-success btn-sm">WhatsApp</a></td>
-</tr>
-<tr>
-<td>Square Plate</td><td>12 inch</td><td>100</td><td>₹850</td>
-<td><a href="https://wa.me/91XXXXXXXXXX?text=Order%20100%2012%20inch%20Square%20Areca%20Plates" class="btn btn-success btn-sm">WhatsApp</a></td>
-</tr>
-<tr>
-<td>Partition Plate</td><td>12 inch</td><td>100</td><td>₹1050</td>
-<td><a href="https://wa.me/91XXXXXXXXXX?text=Order%20100%2012%20inch%20Partition%20Areca%20Plates" class="btn btn-success btn-sm">WhatsApp</a></td>
-</tr>
-</tbody>
-</table>
+    <div class="carousel-inner rounded">
+      <div class="carousel-item active">
+        <img src="images/areca1.jpg" class="d-block w-100" alt="Areca Leaves">
+        <div class="carousel-caption">
+          <h5>Natural Areca Leaves</h5>
+          <p>No chemicals • No additives</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/areca2.jpg" class="d-block w-100" alt="Areca Plates">
+        <div class="carousel-caption">
+          <h5>Premium Finish Plates</h5>
+          <p>Strong • Stylish • Durable</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/areca3.jpg" class="d-block w-100" alt="Bulk Supply">
+        <div class="carousel-caption">
+          <h5>Bulk Supply Available</h5>
+          <p>Events • Catering • Retail</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PREVIOUS BUTTON -->
+    <button class="carousel-control-prev"
+            type="button"
+            data-bs-target="#arecaCarousel"
+            data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <!-- NEXT BUTTON -->
+    <button class="carousel-control-next"
+            type="button"
+            data-bs-target="#arecaCarousel"
+            data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+  </div>
 </section>
 
-<footer>&copy; 2025 Manikya Group</footer>
+<!-- PRODUCTS -->
+<section class="container py-5">
+  <h3 class="section-title text-center mb-4">Our Products</h3>
 
+  <div class="row g-4">
+
+    <!-- ROUND PLATE 12 INCH -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card product-card h-100 shadow-sm">
+        <img src="images/round-12.jpg" class="card-img-top" alt="12 inch Round Areca Plate">
+        <div class="card-body text-center">
+          <h5>Round Plate</h5>
+          <p class="mb-1">12 inch • Pack of 100</p>
+          <h6 class="text-success mb-3">₹650</h6>
+          <a href="https://wa.me/916363770125?text=I%20want%20to%20order%2012%20inch%20Areca%20Leaf%20Round%20Plates"
+             target="_blank"
+             class="btn btn-success w-100">
+            💬 Order on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROUND PLATE 11 INCH -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card product-card h-100 shadow-sm">
+        <img src="images/round-11.jpg" class="card-img-top" alt="11 inch Round Areca Plate">
+        <div class="card-body text-center">
+          <h5>Round Plate</h5>
+          <p class="mb-1">11 inch • Pack of 100</p>
+          <h6 class="text-success mb-3">₹650</h6>
+          <a href="https://wa.me/916363770125?text=I%20want%20to%20order%2011%20inch%20Areca%20Leaf%20Round%20Plates"
+             target="_blank"
+             class="btn btn-success w-100">
+            💬 Order on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROUND PLATE 10 INCH -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card product-card h-100 shadow-sm">
+        <img src="images/round-10.jpg" class="card-img-top" alt="10 inch Round Areca Plate">
+        <div class="card-body text-center">
+          <h5>Round Plate</h5>
+          <p class="mb-1">10 inch • Pack of 100</p>
+          <h6 class="text-success mb-3">₹650</h6>
+          <a href="https://wa.me/916363770125?text=I%20want%20to%20order%2010%20inch%20Areca%20Leaf%20Round%20Plates"
+             target="_blank"
+             class="btn btn-success w-100">
+            💬 Order on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SQUARE PLATE -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card product-card h-100 shadow-sm">
+        <img src="images/square-12.jpg" class="card-img-top" alt="12 inch Square Areca Plate">
+        <div class="card-body text-center">
+          <h5>Square Plate</h5>
+          <p class="mb-1">12 inch • Pack of 100</p>
+          <h6 class="text-success mb-3">₹850</h6>
+          <a href="https://wa.me/916363770125?text=I%20want%20to%20order%2012%20inch%20Areca%20Leaf%20Square%20Plates"
+             target="_blank"
+             class="btn btn-success w-100">
+            💬 Order on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARECA BOWLS -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card product-card h-100 shadow-sm">
+        <img src="images/bowl.jpg" class="card-img-top" alt="Areca Leaf Bowls">
+        <div class="card-body text-center">
+          <h5>Areca Bowls</h5>
+          <p class="mb-1">Pack of 100</p>
+          <h6 class="text-success mb-3">₹1050</h6>
+          <a href="https://wa.me/916363770125?text=I%20want%20to%20order%20Areca%20Leaf%20Bowls"
+             target="_blank"
+             class="btn btn-success w-100">
+            💬 Order on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  
+  &copy; 2025 Manikya Group • Eco-Friendly Manufacturing
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

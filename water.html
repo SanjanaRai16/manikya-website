@@ -5,51 +5,218 @@
 <title>Manikya Drinking Water</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
 <style>
-.hero{background:#0277bd;color:#fff;padding:70px;text-align:center}
-footer{background:#0277bd;color:#fff;text-align:center;padding:15px}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  padding-top: 56px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+              url("images/water-hero.jpg") center/cover no-repeat;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* PRODUCT CARDS */
+.product-card {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.1);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,.15);
+}
+
+.product-card img {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px 14px 0 0;
+}
+
+.section-title {
+  font-weight: 700;
+  color: #0277bd;
+}
+
+/* FOOTER */
+footer {
+  background: #0277bd;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+.carousel img {
+  height: 320px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background: rgba(0,0,0,0.55);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .carousel img {
+    height: 220px;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-dark bg-primary">
-<div class="container">
-<a class="navbar-brand" href="index.html">← Manikya Group</a>
-</div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">
+      ← Manikya Group
+    </a>
+  </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-<h1>Packaged Drinking Water</h1>
-<p>Pure • Safe • Hygienic</p>
+  <h1 class="fw-bold">Packaged Drinking Water</h1>
+  <p class="lead">Pure • Safe • Hygienic</p>
 </section>
-
+<!-- CAROUSEL -->
 <section class="container py-5">
-<h3 class="text-primary text-center mb-4">Pricing</h3>
+  <div id="waterCarousel"
+       class="carousel carousel-fade slide shadow rounded"
+       data-bs-ride="carousel"
+       data-bs-interval="3500"
+       data-bs-pause="hover"
+       data-bs-touch="true">
 
-<table class="table table-bordered text-center">
-<thead class="table-primary">
-<tr><th>Product</th><th>Size</th><th>Price</th><th>Order</th></tr>
-</thead>
-<tbody>
-<tr>
-<td>Water Bottle</td><td>500 ml</td><td>₹10</td>
-<td><a href="https://wa.me/91XXXXXXXXXX?text=Order%20500ml%20Water%20Bottles" class="btn btn-primary btn-sm">WhatsApp</a></td>
-</tr>
-<tr>
-<td>Water Bottle</td><td>1 L</td><td>₹20</td>
-<td><a href="https://wa.me/91XXXXXXXXXX?text=Order%201L%20Water%20Bottles" class="btn btn-primary btn-sm">WhatsApp</a></td>
-</tr>
-<tr>
-<td>Water Can</td><td>20 L</td><td>₹40</td>
-<td><a href="https://wa.me/91XXXXXXXXXX?text=Order%2020L%20Water%20Cans" class="btn btn-primary btn-sm">WhatsApp</a></td>
-</tr>
-</tbody>
-</table>
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#waterCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#waterCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#waterCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner rounded">
+
+      <div class="carousel-item active">
+        <img src="images/water1.jpg" class="d-block w-100">
+        <div class="carousel-caption">
+          <h5>Pure RO Treated Water</h5>
+          <p>Safe • Hygienic • Reliable</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/water2.jpg" class="d-block w-100">
+        <div class="carousel-caption">
+          <h5>Sealed Bottles</h5>
+          <p>Perfect for Events & Travel</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/water3.jpg" class="d-block w-100">
+        <div class="carousel-caption">
+          <h5>20L Bulk Supply</h5>
+          <p>Homes • Offices • Shops</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#waterCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#waterCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
 </section>
 
-<footer>&copy; 2025 Manikya Group</footer>
 
+<!-- PRODUCTS -->
+<section class="container py-5">
+  <h3 class="section-title text-center mb-4">Our Products</h3>
+
+  <div class="row g-4">
+
+    <!-- 500 ML -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card product-card h-100">
+        <img src="images/water-500ml.jpg" class="card-img-top">
+        <div class="card-body text-center">
+          <h5 class="fw-semibold">Packaged Water Bottle</h5>
+          <p class="mb-1">Size: 500 ml</p>
+          <p class="mb-2">Ideal for events & travel</p>
+          <h6 class="text-primary mb-3">₹10 / bottle</h6>
+          <a href="https://wa.me/916363770125?text=I%20want%20to%20order%20500ml%20water%20bottles"
+             target="_blank"
+             class="btn btn-primary w-100">
+            💬 Order on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1 L -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card product-card h-100">
+        <img src="images/water-1l.jpg" class="card-img-top">
+        <div class="card-body text-center">
+          <h5 class="fw-semibold">Packaged Water Bottle</h5>
+          <p class="mb-1">Size: 1 Litre</p>
+          <p class="mb-2">Daily & outdoor use</p>
+          <h6 class="text-primary mb-3">₹20 / bottle</h6>
+          <a href="https://wa.me/916363770125?text=I%20want%20to%20order%201L%20water%20bottles"
+             target="_blank"
+             class="btn btn-primary w-100">
+            💬 Order on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 20 L -->
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="card product-card h-100">
+        <img src="images/water-20l.jpg" class="card-img-top">
+        <div class="card-body text-center">
+          <h5 class="fw-semibold">Water Can</h5>
+          <p class="mb-1">Capacity: 20 Litres</p>
+          <p class="mb-2">Homes • Offices • Shops</p>
+          <h6 class="text-primary mb-3">₹40 / can</h6>
+          <a href="https://wa.me/916363770125?text=I%20want%20to%20order%2020L%20water%20cans"
+             target="_blank"
+             class="btn btn-primary w-100">
+            💬 Order on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2025 Manikya Group • Pure Drinking Water
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
