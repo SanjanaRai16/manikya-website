@@ -239,9 +239,22 @@ footer small {
   object-fit: cover;
 }
 .carousel-caption {
-  background: rgba(0,0,0,0.55);
+ 
   border-radius: 10px;
   padding: 12px 16px;
+}
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-img-lg {
+  height: 320px;
+  object-fit: cover;
 }
 
 .carousel-caption h5 {
@@ -308,7 +321,22 @@ footer small {
   }
 }
 
+.carousel-click-area {
+  position: absolute;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 5;
+}
 
+.carousel-click-area.prev {
+  left: 0;
+}
+
+.carousel-click-area.next {
+  right: 0;
+}
 
 
 </style>
@@ -338,11 +366,76 @@ footer small {
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-<h1 class="display-5 fw-bold">Manikya Group</h1>
-<p class="lead">Sustainable Products for a Better Tomorrow</p>
-<a href="#business" class="btn btn-success btn-lg mt-3">Explore Our Businesses</a>
+<section
+  style="
+    position: relative;
+    min-height: 100vh;
+    background-image: url('1000348098.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  "
+>
+  <!-- Overlay -->
+  <div
+    style="
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+    "
+  ></div>
+
+  <!-- Content -->
+  <div
+    style="
+      position: relative;
+      z-index: 2;
+      color: #ffffff;
+      padding: 20px;
+      max-width: 800px;
+    "
+  >
+    <h1
+      style="
+        font-weight: 700;
+        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+      "
+    >
+      Manikya Group
+    </h1>
+
+    <p
+      style="
+        font-size: 1.25rem;
+        margin-top: 10px;
+        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+      "
+    >
+      Sustainable Products for a Better Tomorrow
+    </p>
+
+    <a
+      href="#business"
+      style="
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 28px;
+        background-color: #198754;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 1.1rem;
+      "
+    >
+      Explore Our Businesses
+    </a>
+  </div>
 </section>
+
 
 <!-- ABOUT -->
 <<!-- ABOUT -->
@@ -356,7 +449,7 @@ footer small {
       <p>
         Founded in 2021 in Mani, Bantwal (DK), Manikya Group is a growing
         manufacturing enterprise focused on eco-friendly disposable products
-        and pure packaged drinking water.
+      .
       </p>
       <p>
         Our mission is to deliver sustainable, high-quality products while
@@ -377,7 +470,7 @@ footer small {
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="0" class="active"></button>
           <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="1"></button>
-          <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="2"></button>
+          <!-- <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="2"></button> -->
         </div>
 
         <!-- Slides -->
@@ -386,37 +479,31 @@ footer small {
           <div class="carousel-item active">
             <img src="images/about1.jpg" class="d-block w-100" alt="Eco Manufacturing">
             <div class="carousel-caption">
-              <h5>Eco-Friendly Manufacturing</h5>
-              <p>Sustainable production with natural materials</p>
+              
             </div>
           </div>
 
           <div class="carousel-item">
             <img src="images/about2.jpg" class="d-block w-100" alt="Areca Plates">
             <div class="carousel-caption">
-              <h5>Areca Leaf Plates</h5>
-              <p>100% biodegradable & chemical-free</p>
+            
             </div>
           </div>
 
-          <div class="carousel-item">
+          <!-- <div class="carousel-item">
             <img src="images/about3.jpg" class="d-block w-100" alt="Packaged Water">
             <div class="carousel-caption">
               <h5>Packaged Drinking Water</h5>
               <p>Pure, hygienic & quality assured</p>
             </div>
-          </div>
+          </div> -->
 
         </div>
 
         <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
+       <div class="carousel-click-area prev" data-bs-target="#aboutCarousel" data-bs-slide="prev"></div>
+<div class="carousel-click-area next" data-bs-target="#aboutCarousel" data-bs-slide="next"></div>
 
-        <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
 
       </div>
     </div>
@@ -430,20 +517,23 @@ footer small {
 <section id="business" class="container py-5">
 <h2 class="section-title text-center mb-5">Our Businesses</h2>
 
-<div class="row g-4">
+<div class="col-md-8 col-lg-7 mx-auto mb-5">
+  <div class="card product-card shadow h-100 text-center">
+    <img 
+      src="images\areca.jpg" 
+      class="card-img-top product-img-lg" 
+      alt="Eco-friendly Areca Leaf Plates"
+    >
+    <div class="card-body p-5">
+      
+      <a href="areca-plates.html" class="btn btn-success btn-lg px-5">
+        View Products
+      </a>
+    </div>
+  </div>
+</div>
 
-<div class="col-md-6">
-<div class="card shadow h-100">
-<img src="images/areca.jpg" class="card-img-top">
-<div class="card-body">
-<h4>🌿 Areca Leaf Plates</h4>
-<p>Natural, biodegradable, chemical-free disposable plates.</p>
-<a href="areca-plates.html" class="btn btn-success">View Products</a>
-</div>
-</div>
-</div>
-
-<div class="col-md-6">
+<!-- <div class="col-md-6">
 <div class="card shadow h-100">
 <img src="images/water.jpg" class="card-img-top">
 <div class="card-body">
@@ -452,7 +542,7 @@ footer small {
 <a href="water.html" class="btn btn-primary">View Products</a>
 </div>
 </div>
-</div>
+</div> -->
 
 </div>
 </section>
